@@ -1,0 +1,70 @@
+package com.issc.dw.entity;
+
+import javax.persistence.*;
+import java.util.Objects;
+
+@Entity
+@Table(name = "tenantcarinfo", schema = "parking", catalog = "")
+public class TenantcarinfoEntity {
+    private String platenum;
+    private String tenantid;
+    private String color;
+    private String cartype;
+
+    @Id
+    @Column(name = "platenum")
+    public String getPlatenum() {
+        return platenum;
+    }
+
+    public void setPlatenum(String platenum) {
+        this.platenum = platenum;
+    }
+
+    @Basic
+    @Column(name = "tenantid")
+    public String getTenantid() {
+        return tenantid;
+    }
+
+    public void setTenantid(String tenantid) {
+        this.tenantid = tenantid;
+    }
+
+    @Basic
+    @Column(name = "color")
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Basic
+    @Column(name = "cartype")
+    public String getCartype() {
+        return cartype;
+    }
+
+    public void setCartype(String cartype) {
+        this.cartype = cartype;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        TenantcarinfoEntity that = (TenantcarinfoEntity) o;
+        return Objects.equals(platenum, that.platenum) &&
+                Objects.equals(tenantid, that.tenantid) &&
+                Objects.equals(color, that.color) &&
+                Objects.equals(cartype, that.cartype);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(platenum, tenantid, color, cartype);
+    }
+}

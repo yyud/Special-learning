@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="smartparking:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="smartparking-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="smartparking:war exploded" />
+    </root>
+  </artifact>
+</component>
