@@ -3,12 +3,15 @@ package com.issc.dw.entity;
 import javax.persistence.*;
 import java.util.Objects;
 
+<<<<<<< HEAD
 /**
  * @author yyud
  * @version V1.0
  * @Description:
  * @Date 20:37 2018/4/9
  */
+=======
+>>>>>>> fb2478b48bd82e4754a8bb0a25afe75c472dab55
 @Entity
 @Table(name = "temporarycarinfo", schema = "parking", catalog = "")
 public class TemporarycarinfoEntity {

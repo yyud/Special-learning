@@ -4,12 +4,22 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+<<<<<<< HEAD
   <groupId>com.yyud</groupId>
   <artifactId>smartParking</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
   <name>smartParking</name>
+=======
+  <groupId>smartparking</groupId>
+  <artifactId>smartparking</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <name>smartparking</name>
+  <!-- FIXME change it to the project's website -->
+>>>>>>> fb2478b48bd82e4754a8bb0a25afe75c472dab55
   <url>http://www.example.com</url>
 
   <properties>
@@ -18,21 +28,29 @@
     <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
+<<<<<<< HEAD
 
   <dependencies>
 <!--junit测试-->
+=======
+  <dependencies>
+>>>>>>> fb2478b48bd82e4754a8bb0a25afe75c472dab55
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
+<<<<<<< HEAD
 <!--spring-->
+=======
+>>>>>>> fb2478b48bd82e4754a8bb0a25afe75c472dab55
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
       <version>4.3.12.RELEASE</version>
     </dependency>
+<<<<<<< HEAD
 
       <dependency>
           <groupId>org.springframework</groupId>
@@ -60,10 +78,30 @@
     </dependency>
 
     <dependency>
+=======
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-web</artifactId>
+      <version>4.3.9.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-context</artifactId>
+      <version>4.3.12.RELEASE</version>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-orm</artifactId>
+      <version>4.3.12.RELEASE</version>
+    </dependency>
+    <dependency>
+      <!--数据库连接池-->
+>>>>>>> fb2478b48bd82e4754a8bb0a25afe75c472dab55
       <groupId>com.alibaba</groupId>
       <artifactId>druid</artifactId>
       <version>1.1.3</version>
     </dependency>
+<<<<<<< HEAD
 
 <!--hibernate-->
     <dependency>
@@ -73,23 +111,34 @@
     </dependency>
       <!--log4j日志-->
     <dependency>
+=======
+    <dependency>
+      <!--日志-->
+>>>>>>> fb2478b48bd82e4754a8bb0a25afe75c472dab55
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
       <version>1.2.17</version>
     </dependency>
+<<<<<<< HEAD
 <!--spring data-jpa-->
+=======
+>>>>>>> fb2478b48bd82e4754a8bb0a25afe75c472dab55
     <dependency>
       <groupId>org.springframework.data</groupId>
       <artifactId>spring-data-jpa</artifactId>
       <version>1.11.4.RELEASE</version>
     </dependency>
+<<<<<<< HEAD
 <!--数据库驱动-->
+=======
+>>>>>>> fb2478b48bd82e4754a8bb0a25afe75c472dab55
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
       <version>6.0.6</version>
     </dependency>
     <dependency>
+<<<<<<< HEAD
       <groupId>org.springframework</groupId>
       <artifactId>spring-test</artifactId>
       <version>4.3.9.RELEASE</version>
@@ -111,6 +160,8 @@
 
     <!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
     <dependency>
+=======
+>>>>>>> fb2478b48bd82e4754a8bb0a25afe75c472dab55
       <groupId>javax.servlet</groupId>
       <artifactId>jstl</artifactId>
       <version>1.2</version>
@@ -120,6 +171,7 @@
       <artifactId>fastjson</artifactId>
       <version>1.2.44</version>
     </dependency>
+<<<<<<< HEAD
 
 
     <!-- 上传文件工具 -->
@@ -135,4 +187,43 @@
       <version>2.7.5</version>
     </dependency>
   </dependencies>
+=======
+  </dependencies>
+
+  <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+        <!-- see http://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+        <plugin>
+          <artifactId>maven-resources-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.7.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.20.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>3.0.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-install-plugin</artifactId>
+          <version>2.5.2</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>2.8.2</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+  </build>
+>>>>>>> fb2478b48bd82e4754a8bb0a25afe75c472dab55
 </project>

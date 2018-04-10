@@ -3,12 +3,15 @@ package com.issc.dw.entity;
 import javax.persistence.*;
 import java.util.Objects;
 
+<<<<<<< HEAD
 /**
  * @author yyud
  * @version V1.0
  * @Description:管理员用户
  * @Date 20:37 2018/4/9
  */
+=======
+>>>>>>> fb2478b48bd82e4754a8bb0a25afe75c472dab55
 @Entity
 @Table(name = "admin", schema = "parking", catalog = "")
 public class AdminEntity {
@@ -40,7 +43,10 @@ public class AdminEntity {
     @Basic
     @Column(name = "password")
     public String getPassword() {
+<<<<<<< HEAD
         System.out.println("sddddddddd");
+=======
+>>>>>>> fb2478b48bd82e4754a8bb0a25afe75c472dab55
         return password;
     }
 
