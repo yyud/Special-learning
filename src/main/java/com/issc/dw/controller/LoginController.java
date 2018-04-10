@@ -23,6 +23,8 @@ public class LoginController {
     }
     @RequestMapping("/jie")
     public String jie(){
+        System.out.println("rr");
         return "login";
+
     }
 }
