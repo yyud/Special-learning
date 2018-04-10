@@ -1,4 +1,4 @@
-package com.yyud.entity;
+package com.issc.dw.entity;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -10,31 +10,31 @@ import java.util.Objects;
  * @Date 20:37 2018/4/9
  */
 @Entity
-@Table(name = "tenantcarinfo", schema = "parking", catalog = "")
-public class TenantcarinfoEntity {
-    private String platenum;
-    private String tenantid;
+@Table(name = "businesscarinfo", schema = "parking", catalog = "")
+public class BusinesscarinfoEntity {
+    private String paltenum;
+    private Long businessid;
     private String color;
     private String cartype;
 
     @Id
-    @Column(name = "platenum")
-    public String getPlatenum() {
-        return platenum;
+    @Column(name = "paltenum")
+    public String getPaltenum() {
+        return paltenum;
     }
 
-    public void setPlatenum(String platenum) {
-        this.platenum = platenum;
+    public void setPaltenum(String paltenum) {
+        this.paltenum = paltenum;
     }
 
     @Basic
-    @Column(name = "tenantid")
-    public String getTenantid() {
-        return tenantid;
+    @Column(name = "businessid")
+    public Long getBusinessid() {
+        return businessid;
     }
 
-    public void setTenantid(String tenantid) {
-        this.tenantid = tenantid;
+    public void setBusinessid(Long businessid) {
+        this.businessid = businessid;
     }
 
     @Basic
@@ -61,9 +61,9 @@ public class TenantcarinfoEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        TenantcarinfoEntity that = (TenantcarinfoEntity) o;
-        return Objects.equals(platenum, that.platenum) &&
-                Objects.equals(tenantid, that.tenantid) &&
+        BusinesscarinfoEntity that = (BusinesscarinfoEntity) o;
+        return Objects.equals(paltenum, that.paltenum) &&
+                Objects.equals(businessid, that.businessid) &&
                 Objects.equals(color, that.color) &&
                 Objects.equals(cartype, that.cartype);
     }
@@ -71,6 +71,6 @@ public class TenantcarinfoEntity {
     @Override
     public int hashCode() {
 
-        return Objects.hash(platenum, tenantid, color, cartype);
+        return Objects.hash(paltenum, businessid, color, cartype);
     }
 }

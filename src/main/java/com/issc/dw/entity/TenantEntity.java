@@ -1,4 +1,4 @@
-package com.yyud.entity;
+package com.issc.dw.entity;
 
 import javax.persistence.*;
 import java.util.Objects;
@@ -10,32 +10,32 @@ import java.util.Objects;
  * @Date 20:37 2018/4/9
  */
 @Entity
-@Table(name = "business", schema = "parking", catalog = "")
-public class BusinessEntity {
-    private long businessid;
-    private String businessname;
+@Table(name = "tenant", schema = "parking", catalog = "")
+public class TenantEntity {
+    private long tenantid;
+    private String tenantname;
     private String phone;
     private String pricetype;
     private String remark;
 
     @Id
-    @Column(name = "businessid")
-    public long getBusinessid() {
-        return businessid;
+    @Column(name = "tenantid")
+    public long getTenantid() {
+        return tenantid;
     }
 
-    public void setBusinessid(long businessid) {
-        this.businessid = businessid;
+    public void setTenantid(long tenantid) {
+        this.tenantid = tenantid;
     }
 
     @Basic
-    @Column(name = "businessname")
-    public String getBusinessname() {
-        return businessname;
+    @Column(name = "tenantname")
+    public String getTenantname() {
+        return tenantname;
     }
 
-    public void setBusinessname(String businessname) {
-        this.businessname = businessname;
+    public void setTenantname(String tenantname) {
+        this.tenantname = tenantname;
     }
 
     @Basic
@@ -72,9 +72,9 @@ public class BusinessEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        BusinessEntity that = (BusinessEntity) o;
-        return businessid == that.businessid &&
-                Objects.equals(businessname, that.businessname) &&
+        TenantEntity that = (TenantEntity) o;
+        return tenantid == that.tenantid &&
+                Objects.equals(tenantname, that.tenantname) &&
                 Objects.equals(phone, that.phone) &&
                 Objects.equals(pricetype, that.pricetype) &&
                 Objects.equals(remark, that.remark);
@@ -83,6 +83,6 @@ public class BusinessEntity {
     @Override
     public int hashCode() {
 
-        return Objects.hash(businessid, businessname, phone, pricetype, remark);
+        return Objects.hash(tenantid, tenantname, phone, pricetype, remark);
     }
 }

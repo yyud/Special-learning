@@ -1,4 +1,4 @@
-package com.yyud.entity;
+package com.issc.dw.entity;
 
 import javax.persistence.*;
 import java.util.Objects;
