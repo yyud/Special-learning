@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>登录</title>
-<link rel="stylesheet" type="text/css" href="/static/login/css/styles.css">
+<link rel="stylesheet" type="text/css" href="/static/css/styles.css">
 </head>
 <body>
 <div class="htmleaf-container">
@@ -35,7 +35,7 @@
 	</div>
 </div>
 
-<script src="/static/login/js/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="/static/js/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script>
 $('#login-button').click(function (event) {
 	event.preventDefault();
@@ -51,7 +51,7 @@ $('#login-button').click(function (event) {
 		    }
 			else{
 		        alert("success")
-		         // windows.location.href="/"
+		         window.location.href="/WEB-INF/views/index.html"
 				}
 		},dataType:"json"
 	})
