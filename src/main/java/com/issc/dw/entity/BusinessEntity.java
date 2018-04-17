@@ -20,6 +20,7 @@ public class BusinessEntity {
     private String remark;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "businessid")
     public long getBusinessid() {
         return businessid;

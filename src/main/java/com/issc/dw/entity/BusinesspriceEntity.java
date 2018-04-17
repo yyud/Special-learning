@@ -19,6 +19,7 @@ public class BusinesspriceEntity {
     private double price;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     public long getId() {
         return id;
