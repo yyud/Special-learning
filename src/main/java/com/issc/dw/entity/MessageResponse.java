@@ -1,6 +1,6 @@
 package com.issc.dw.entity;
 
-public class AdminResponse<T> {
+public class MessageResponse<T> {
     private int code;
     private String  message;
     private T data;

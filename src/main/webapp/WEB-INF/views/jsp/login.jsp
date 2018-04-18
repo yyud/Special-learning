@@ -51,7 +51,7 @@ $('#login-button').click(function (event) {
 		    }
 			else{
 		        alert("success")
-		         window.location.href="/WEB-INF/views/index.html"
+		         window.location.href="/static/html/index.html"
 				}
 		},dataType:"json"
 	})

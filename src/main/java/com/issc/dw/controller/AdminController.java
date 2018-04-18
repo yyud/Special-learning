@@ -12,18 +12,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 @Controller
-@RequestMapping("/admin")
-public class LoginController {
+@RequestMapping("/cha")
+public class AdminController {
     @Autowired
     private AdminService adminService;
-
-    @RequestMapping(value = "/login", produces = "text/html;charset=utf-8")
-    @ResponseBody
-    public String login(String Username, String Password) {
-        MessageResponse messageResponse = adminService.Login(Username, Password);
-        System.out.println(Username);
-        return JSON.toJSONString(messageResponse);
-    }
 
     @RequestMapping(value = "/find", produces = "text/html;charset=utf-8")
     @ResponseBody
@@ -31,9 +23,25 @@ public class LoginController {
         List<AdminEntity> adminEntities=adminService.find();
         return JSON.toJSONString(adminEntities);
     }
-    @RequestMapping("/jie")
-    public String jie(){
-        return "/jsp/login";
+    //根据id删除用户
+    @ResponseBody
+    @RequestMapping(value="/delete", produces = "text/html;charset=utf-8")
+    public String deleteUser(long id){
+        MessageResponse messageResponse =adminService.deleteUser(id);;
 
+        return JSON.toJSONString(messageResponse);
     }
+    //添加
+    @ResponseBody
+    @RequestMapping(value="/add", produces = "text/html;charset=utf-8")
+    public String addUser(AdminEntity adminEntity){
+        MessageResponse messageResponse =adminService.addUser(adminEntity);;
+        return JSON.toJSONString(messageResponse);
+    }
+
+    @RequestMapping("/display")
+    public String jie(){
+        return "/jsp/admin";
+    }
+
 }

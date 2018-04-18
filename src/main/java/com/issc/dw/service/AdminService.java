@@ -1,19 +1,21 @@
 package com.issc.dw.service;
 
-import com.issc.dw.dao.Admindao;
+import com.issc.dw.dao.AdminDao;
 import com.issc.dw.entity.AdminEntity;
-import com.issc.dw.entity.AdminResponse;
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
+import com.issc.dw.entity.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class AdminService {
     @Autowired
-    private Admindao admindao;
-    public AdminResponse<AdminEntity> Login(String name, String password){
+    private AdminDao admindao;
+    //登录
+    public MessageResponse<AdminEntity> Login(String name, String password){
         AdminEntity adminEntity=admindao.findByUsernameAndPassword(name,password);
-        AdminResponse<AdminEntity>  response=new AdminResponse<>();
+        MessageResponse<AdminEntity> response=new MessageResponse<>();
         if(adminEntity!=null){
             response.setCode(1);
             response.setMessage("success");
@@ -23,5 +25,34 @@ public class AdminService {
             response.setMessage("fail");
         }
         return response;
+    }
+
+    //删除用户
+    public MessageResponse<AdminEntity> deleteUser(long id){
+        MessageResponse<AdminEntity> response=new MessageResponse<>();
+        try{
+            admindao.delete(id);
+        }catch(Exception e){
+            response.setCode(0);
+            return response;
+        }
+        response.setCode(1);
+        return response;
+    }
+    //添加
+    public MessageResponse<AdminEntity> addUser(AdminEntity adminEntity){
+        MessageResponse<AdminEntity> response=new MessageResponse<>();
+        try{
+            admindao.save(adminEntity);
+        }catch(Exception e){
+            response.setCode(0);
+            return response;
+        }
+        response.setCode(1);
+        return response;
+    }
+    //查找全部
+    public List<AdminEntity> find(){
+        return admindao.findAll();
     }
 }
