@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.issc.dw.entity.BlacklistEntity;
 import com.issc.dw.entity.MessageResponse;
 import com.issc.dw.service.BlacklistService;
-import com.mysql.cj.xdevapi.JsonString;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,5 +44,10 @@ public class BlacklistController {
     public String addBlacklist(BlacklistEntity blacklistEntity){
         MessageResponse<BlacklistEntity> response=blacklistService.addBlacklist(blacklistEntity);
         return JSON.toJSONString(response);
+    }
+
+    @RequestMapping("/display")
+    public String jie(){
+        return "jsp/blacklist";
     }
 }

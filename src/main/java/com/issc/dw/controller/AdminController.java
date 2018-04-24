@@ -6,13 +6,15 @@ import com.issc.dw.entity.MessageResponse;
 import com.issc.dw.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-@RequestMapping("/cha")
+@RequestMapping("/admin")
 public class AdminController {
     @Autowired
     private AdminService adminService;
@@ -26,8 +28,8 @@ public class AdminController {
     //根据id删除用户
     @ResponseBody
     @RequestMapping(value="/delete", produces = "text/html;charset=utf-8")
-    public String deleteUser(long id){
-        MessageResponse messageResponse =adminService.deleteUser(id);;
+    public String deleteUser(@RequestBody ArrayList<AdminEntity> adminEntities){
+        MessageResponse messageResponse =adminService.deleteUser(adminEntities);;
 
         return JSON.toJSONString(messageResponse);
     }
@@ -41,7 +43,7 @@ public class AdminController {
 
     @RequestMapping("/display")
     public String jie(){
-        return "/jsp/admin";
+        return "jsp/user";
     }
 
 }

@@ -43,7 +43,6 @@ public class AdminEntity {
     @Basic
     @Column(name = "password")
     public String getPassword() {
-        System.out.println("sddddddddd");
         return password;
     }
 

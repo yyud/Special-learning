@@ -31,7 +31,7 @@
 <script>
     $(document).ready(function() {
         $.ajax({
-            url: "/cha/find",//请求地址
+            url: "/admin/find",//请求地址
             dataType: "json",//数据格式
             type: "post",//请求方式
             async: false,//是否异步请求

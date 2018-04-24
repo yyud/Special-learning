@@ -5,7 +5,9 @@ import com.issc.dw.entity.AdminEntity;
 import com.issc.dw.entity.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -28,10 +30,10 @@ public class AdminService {
     }
 
     //删除用户
-    public MessageResponse<AdminEntity> deleteUser(long id){
+    public MessageResponse<AdminEntity> deleteUser(ArrayList<AdminEntity> adminEntities){
         MessageResponse<AdminEntity> response=new MessageResponse<>();
         try{
-            admindao.delete(id);
+            admindao.delete(adminEntities);
         }catch(Exception e){
             response.setCode(0);
             return response;

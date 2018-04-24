@@ -42,7 +42,7 @@ $('#login-button').click(function (event) {
 	// $('form').fadeOut(500);
 	// $('.wrapper').addClass('form-success');
 	$.ajax({
-		url:'/admin/login',
+		url:'/user/login',
 		type:'post',
 		data:$('form').serialize(),//序列化
 		success:function(data){
