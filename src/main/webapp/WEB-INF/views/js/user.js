@@ -61,11 +61,12 @@ $(function(){
             if(rows.length>0){
                 $.messager.confirm('确定操作','你确定要删除所选记录吗？',function (flag){
                     if(flag){
-                        list=rows;
+                        list=JSON.stringify(rows);
                         // list={list:JSON.stringify(rows)};
                         console.log(list);
                         $.ajax({
                             type : 'POST',
+                            contentType:'application/json',
                             url : '/admin/delete',
                             data : list,
                             beforeSend : function(){

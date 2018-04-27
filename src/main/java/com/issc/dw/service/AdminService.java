@@ -30,7 +30,7 @@ public class AdminService {
     }
 
     //删除用户
-    public MessageResponse<AdminEntity> deleteUser(ArrayList<AdminEntity> adminEntities){
+    public MessageResponse<AdminEntity> deleteUser(List<AdminEntity> adminEntities){
         MessageResponse<AdminEntity> response=new MessageResponse<>();
         try{
             admindao.delete(adminEntities);

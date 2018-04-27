@@ -6,6 +6,7 @@ import com.issc.dw.entity.MessageResponse;
 import com.issc.dw.service.BlacklistService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -33,8 +34,8 @@ public class BlacklistController {
     //按车牌删除
     @RequestMapping(value = "/delete" , produces = "text/html;charset=utf-8")
     @ResponseBody
-    public String delete(long id){
-        MessageResponse<BlacklistEntity> response=blacklistService.deleteBlacklist(id);
+    public String delete(@RequestBody List<BlacklistEntity> blacklistEntities){
+        MessageResponse<BlacklistEntity> response=blacklistService.deleteBlacklist(blacklistEntities);
         return JSON.toJSONString(response);
     }
 

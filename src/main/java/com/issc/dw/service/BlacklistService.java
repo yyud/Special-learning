@@ -46,10 +46,10 @@ public class BlacklistService {
     }
 
     //删除
-    public MessageResponse<BlacklistEntity> deleteBlacklist(long id){
+    public MessageResponse<BlacklistEntity> deleteBlacklist(List<BlacklistEntity> blacklistEntities){
         MessageResponse<BlacklistEntity> response=new MessageResponse<>();
         try{
-            blacklistDao.delete(id);
+            blacklistDao.delete(blacklistEntities);
         }catch(Exception e){
             response.setCode(0);
             return response;

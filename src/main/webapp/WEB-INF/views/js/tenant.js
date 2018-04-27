@@ -3,7 +3,7 @@ $(function(){
     obj = {
         editrow : undefined,//添加的标记变量
         search : function (){$('#box').datagrid('load',{
-            username : $.trim($("input[name='username']").val()),
+            username : $.trim($("input[name='phone']").val()),
             power : $.trim($("input[name='power']").val()),
         });
         },
@@ -67,7 +67,7 @@ $(function(){
                         $.ajax({
                             type : 'POST',
                             contentType:'application/json',
-                            url : '/blacklist/delete',
+                            url : '/tenant/delete',
                             data : list,
                             beforeSend : function(){
                                 $('#box').datagrid('loading');//载入动画
@@ -102,8 +102,8 @@ $(function(){
 
     $("#box").datagrid({
         //width:100,
-        url : '/blacklist/find',
-        title:'黑名单列表',
+        url : '/tenant/find',
+        title:'租户列表',
         iconCls : 'icon-search',
         //striped : true,//斑马线效果
         fitColumns : true,//列自适应大小
@@ -111,13 +111,13 @@ $(function(){
         //singleSelect : true,// 允许选着多行
         columns : [[
             {
-                field : 'id',
-                title : 'id',
+                field : 'tenantid',
+                title : 'tenantid',
                 checkbox : true,
             },
             {
-                field : 'platenum',
-                title : '车牌号',
+                field : 'tenantname',
+                title : '姓名',
                 sortable : true, //排序
                 //align: 'center',//标题内容居中
                 halign : 'center',//标题居中
@@ -128,6 +128,34 @@ $(function(){
                         required :"true",
                     },
                 },
+            },
+            {
+                field : 'phone',
+                title : '手机号',
+                sortable : true,
+                halign : 'center',//标题居中
+                width : 100,//100%
+                editor : {  //编辑
+                    type : 'validatebox',
+                    options : {
+                        required :"true",
+                    },
+                },
+
+            },
+            {
+                field : 'pricetype',
+                title : '收费类型',
+                sortable : true,
+                halign : 'center',//标题居中
+                width : 100,//100%
+                editor : {  //编辑
+                    type : 'validatebox',
+                    options : {
+                        required :"true",
+                    },
+                },
+
             },
             {
                 field : 'remark',
@@ -146,7 +174,7 @@ $(function(){
         ]],
         toolbar : '#tb',
         pagination : true, //底部显示分页组件
-        sortName : 'id',// 允许排序的列（第一次加载）
+        sortName : 'tenantid',// 允许排序的列（第一次加载）
         sortOrder : 'asc',//排序规则（第一次加载）
         remoteSort : false, //定义是否服务器排序
         onDblClickRow : function (rowIndex,rowData){//双击一行
@@ -177,7 +205,7 @@ $(function(){
                 if(flag){
                     $.ajax({
                         type : 'POST',
-                        url : '/blacklist/add',
+                        url : '/tenant/add',
                         data : rowData,
                         beforeSend : function(){
                             $('#box').datagrid('loading');//载入动画
