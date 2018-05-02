@@ -24,6 +24,11 @@ public class BusinesspriceController {
     @Autowired
     private BusinesspriveService businesspriveService;
 
+    //显示页面路径
+    @RequestMapping("display")
+    public String getString() {
+        return "/jsp/display";
+    }
     //保存
     @RequestMapping("save")
     @ResponseBody

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<form>
+    发送<textarea id="getmns"></textarea>
+    接收<textarea id="postms"></textarea>
+    <button onclick="return s()">点我</button>
+</form>
+
+
+<script>
+function s() {
+    ws=new WebSocket("ws://10.192.56.150:8080/sss?userId="+$("#getmns").val())
+    ws.onopen = function () {
+        console.log("onpen");
+        ws.send($("#getmns").val());
+    }
+    ws.onclose = function () {
+        console.log("onclose");
+    }
+
+    ws.onmessage = function (msg) {
+        console.log(msg);
+        $("#postms").val(msg.data);
+    }
+return false;
+
+}
+
+</script>
+</body>
+</html>

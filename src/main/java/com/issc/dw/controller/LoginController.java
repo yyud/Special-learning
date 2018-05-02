@@ -23,6 +23,6 @@ public class LoginController {
     }
     @RequestMapping("/jie")
     public String jie(){
-        return "jsp/login";
+        return "/jsp/login";
     }
 }

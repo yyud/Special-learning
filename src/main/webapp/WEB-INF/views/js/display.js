@@ -1,16 +1,21 @@
 $(function(){
-    $.ajax({
-        url:'/businesspric/findall',
-        type:'post',
-        // contentType:" application/json; charset=UTF-8",
-         data:$('form').serialize(),//序列化
-        success:function(data){
-            if(data.code===0){
-                alert("error")
+    var pager = $('#dg').datagrid().datagrid('getPager');	// get the pager of datagrid
+    pager.pagination({
+        buttons:[{
+            iconCls:'icon-search',
+            handler:function(){
+                alert('search');
             }
-            else{
+        },{
+            iconCls:'icon-add',
+            handler:function(){
+                alert('add');
             }
-        },dataType:"json"
+        },{
+            iconCls:'icon-edit',
+            handler:function(){
+                alert('edit');
+            }
+        }]
     });
-
 });

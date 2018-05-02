@@ -1,7 +1,6 @@
 package com.issc.dw.entity;
 
 import javax.persistence.*;
-import java.util.Objects;
 
 
 /**
@@ -14,7 +13,7 @@ import java.util.Objects;
 @Table(name = "business", schema = "parking", catalog = "")
 public class BusinessEntity {
     private long businessid;
-    private String businessname;
+    private String businessName;
     private String phone;
     private String pricetype;
     private String remark;
@@ -32,12 +31,12 @@ public class BusinessEntity {
 
     @Basic
     @Column(name = "businessname")
-    public String getBusinessname() {
-        return businessname;
+    public String getBusinessName() {
+        return businessName;
     }
 
-    public void setBusinessname(String businessname) {
-        this.businessname = businessname;
+    public void setBusinessName(String businessName) {
+        this.businessName = businessName;
     }
 
     @Basic
@@ -70,21 +69,15 @@ public class BusinessEntity {
         this.remark = remark;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        BusinessEntity that = (BusinessEntity) o;
-        return businessid == that.businessid &&
-                Objects.equals(businessname, that.businessname) &&
-                Objects.equals(phone, that.phone) &&
-                Objects.equals(pricetype, that.pricetype) &&
-                Objects.equals(remark, that.remark);
-    }
 
     @Override
-    public int hashCode() {
-
-        return Objects.hash(businessid, businessname, phone, pricetype, remark);
+    public String toString() {
+        return "BusinessEntity{" +
+                "businessid=" + businessid +
+                ", businessName='" + businessName + '\'' +
+                ", phone='" + phone + '\'' +
+                ", pricetype='" + pricetype + '\'' +
+                ", remark='" + remark + '\'' +
+                '}';
     }
 }

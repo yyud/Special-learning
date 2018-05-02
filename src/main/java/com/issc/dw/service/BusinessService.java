@@ -32,4 +32,18 @@ public class BusinessService {
         return list;
     }
 
+    //删除商家信息
+    public void delete(List<BusinessEntity> list){
+        businessDao.delete(list);
+    }
+
+    //保存商家信息
+    public void save(List<BusinessEntity> list){
+        businessDao.save(list);
+    }
+
+    //保存一条  或  修改一条数据
+    public void save(BusinessEntity businessEntity){
+        businessDao.save(businessEntity);
+    }
 }
