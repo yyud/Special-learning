@@ -43,7 +43,6 @@ $(function(){
                 if(obj.editrow!=undefined){
                     $('#box').datagrid('endEdit',obj.editrow);
                 }
-
                 if(obj.editrow == undefined){
                     var index = $('#box').datagrid('getRowIndex',rows[0]);//获取选中行的行号
                     $('#save,#redo').show();
@@ -54,7 +53,6 @@ $(function(){
             }else{
                 $.messager.alert('警告','修改必须且只能选择一行');
             }
-            alert(3)
         },
         remove : function (){
             var rows = $('#box').datagrid('getSelections');//获取选中的行
@@ -116,6 +114,7 @@ $(function(){
                 checkbox : true,
             },
             {
+
                 field : 'username',
                 title : '账号',
                 sortable : true, //排序
@@ -144,6 +143,7 @@ $(function(){
 
             },
             {
+
                 field : 'power',
                 title : '权限',
                 sortable : true,

@@ -17,7 +17,7 @@ public class LoginController {
     @Autowired
     private AdminService adminService;
 
-    @RequestMapping(value = "/login", produces = "text/html;charset=utf-8")
+    @RequestMapping(value = "/login",produces = "text/html;charset=utf-8")
     @ResponseBody
     public String login(String Username, String Password) {
         MessageResponse messageResponse = adminService.Login(Username, Password);
@@ -34,6 +34,5 @@ public class LoginController {
     @RequestMapping("/jie")
     public String jie(){
         return "/jsp/login";
-
     }
 }
