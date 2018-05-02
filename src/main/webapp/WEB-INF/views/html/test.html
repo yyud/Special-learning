@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>编号</td>
+        <td>名称</td>
+        <td>标识</td>
+        <td>位置</td>
+        <td>状态</td>
+    </tr>
+</table>
+
+<button  id="login-button">Login</button>
+<script>
+    var jsondata;
+    $('#login-button').click(function find (event) {
+        event.preventDefault();
+        // $('form').fadeOut(500);
+        // $('.wrapper').addClass('form-success');
+        $.ajax({
+            url:'/inout/find',
+            type:'post',
+            data:$('form').serialize(),//序列化
+            success:function(data){
+                if(data.code===0){
+                    alert("error")
+                }
+                else{
+                    jsondata = data;
+                    function display(){
+                        var table = document.getElementsByTagName('table')[0];
+                        for(var i = 0;i<jsondata.length;i++){
+                            var tr =table.insertRow (table.rows.length);
+                            var obj = jsondata[i];
+                            for(var p in obj){
+                                if(p == 'state'){
+                                    break;
+                                }
+                                var td =tr.insertCell(tr.cells.length);
+                                td.innerText =obj[p];
+                            }
+                        }
+                    }
+                }
+            },dataType:"json"
+        })
+    });
+
+
+
+   // find();
+   display();
+
+</script>
+</body>
+</html>

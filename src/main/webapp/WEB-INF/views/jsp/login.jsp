@@ -51,7 +51,11 @@ $('#login-button').click(function (event) {
 		    }
 			else{
 		        alert("success")
+<<<<<<< HEAD:src/main/webapp/WEB-INF/views/jsp/login.jsp
 		         window.location.href="/WEB-INF/views/index.html"
+=======
+		          window.location.href="/static/html/index.html"
+>>>>>>> yyud:src/main/webapp/WEB-INF/views/jsp/login.jsp
 				}
 		},dataType:"json"
 	})

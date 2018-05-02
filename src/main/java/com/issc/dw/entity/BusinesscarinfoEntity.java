@@ -19,6 +19,7 @@ public class BusinesscarinfoEntity {
     private String cartype;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "paltenum")
     public String getPaltenum() {
         return paltenum;

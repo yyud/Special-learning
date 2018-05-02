@@ -21,6 +21,7 @@ public class ExitsandentranceEntity {
     private String state;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "exitid")
     public long getExitid() {
         return exitid;
@@ -84,7 +85,6 @@ public class ExitsandentranceEntity {
 
     @Override
     public int hashCode() {
-
         return Objects.hash(exitid, exitname, exitsign, location, state);
     }
 }

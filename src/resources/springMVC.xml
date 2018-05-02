@@ -3,9 +3,10 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:mvc="http://www.springframework.org/schema/mvc"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+       xmlns:websocket="http://www.springframework.org/schema/websocket"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket.xsd">
     <!--扫描control-->
-    <context:component-scan base-package="com.issc.dw"/>
+    <context:component-scan base-package="com.issc.dw.controller"/>
     <!--配置jsp-->
     <mvc:view-resolvers>
         <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -18,4 +19,12 @@
     <!--配置静态资源（CSS,JS）-->
     <mvc:default-servlet-handler/>
     <mvc:resources mapping="/static/**" location="/WEB-INF/views/"/>
+
+
+    <bean id="first" name="first" class="com.issc.dw.websokilet.FristWebSokiet"></bean>
+
+    <websocket:handlers>
+        <websocket:mapping path="sss" handler="first"/>
+    </websocket:handlers>
+
 </beans>
